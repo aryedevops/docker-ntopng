@@ -21,6 +21,9 @@ RUN cd /bin && \
     wget https://github.com/ohjames/smell-baron/releases/download/v0.3.0/smell-baron && \
     chmod a+x smell-baron
 
+RUN mkdir /var/lib/ntopng && \
+    chmod 777 /var/lib/ntopng
+
 ADD redis.conf /etc/redis.conf
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
